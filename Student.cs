@@ -72,15 +72,28 @@ namespace Part_9___Classes
             return firstName + " " + lastName;
         }
 
-        //public void ResetStudentNumber()
-        //{
-        //    studentNumber = 555000;
-        //    studentNumber += rng.Next(100, 1000);
-        //}
-
         private void GenerateEmail()
         {
-            email = firstName.Substring(0, 3) + lastName.Substring(0, 3) + studentNumber.ToString().Substring(3) + "@ICS4U.com";
+            //both first and last are longer than 3
+            if (firstName.Length >= 3 && lastName.Length >= 3)
+            {
+                email = firstName.Substring(0, 3) + lastName.Substring(0, 3) + studentNumber.ToString().Substring(3) + "@ICS4U.com";
+            }
+            //only first name is longer than 3
+            else if (firstName.Length >= 3 && lastName.Length < 3)
+            {
+                email = firstName.Substring(0, 3) + lastName.Substring(0, lastName.Length) + studentNumber.ToString().Substring(3) + "@ICS4U.com";
+            }
+            //only the last name is longer than 3
+            else if (firstName.Length < 3 && lastName.Length >= 3)
+            {
+                email = firstName.Substring(0, firstName.Length) + lastName.Substring(0, 3) + studentNumber.ToString().Substring(3) + "@ICS4U.com";
+            }
+            //neither are longer than 3
+            else if (firstName.Length < 3 && lastName.Length < 3)
+            {
+                email = firstName.Substring(0, firstName.Length) + lastName.Substring(0, lastName.Length) + studentNumber.ToString().Substring(3) + "@ICS4U.com";
+            }
         }
     }
 }
