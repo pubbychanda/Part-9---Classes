@@ -96,20 +96,20 @@ namespace Part_9___Classes
             }
         }
 
-        ////public override bool Equals(object obj)
-        ////{
-        ////    Student student = obj as Student;
-        ////    if (student == null)
-        ////        return false;
-        ////    return
-        ////}
+        public override bool Equals(object obj)
+        {
+            Student student = obj as Student;
+            if (student == null)
+                return false;
+            return this == student;
+        }
 
-        //public int CompareTo(Student that)
-        //{
-        //    if (this.LastName.CompareTo(that.LastName) == 0)
-        //        return this.FirstName.CompareTo(that.FirstName);
-        //    else
-        //        return this.LastName.CompareTo(that.LastName);
-        //}
+        public int CompareTo(Student that)
+        {
+            if (this.LastName.CompareTo(that.LastName) == 0)
+                return this.FirstName.CompareTo(that.FirstName);
+            else
+                return this.LastName.CompareTo(that.LastName);
+        }
     }
 }

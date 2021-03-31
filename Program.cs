@@ -30,8 +30,8 @@ namespace Part_9___Classes
             }
             for (int i = 0; i < students.Count; i++)
             {
+                students.Sort();
                 Console.WriteLine(students[i].Email + " | " + students[i].StudentNumber); 
-                
             }
 
         }
