@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Part_9___Classes
 {
-    class Student
+    class Student : IComparable<Student>
     {
         private string firstName;
         private string lastName;
@@ -95,5 +95,21 @@ namespace Part_9___Classes
                 email = firstName.Substring(0, firstName.Length) + lastName.Substring(0, lastName.Length) + studentNumber.ToString().Substring(3) + "@ICS4U.com";
             }
         }
+
+        ////public override bool Equals(object obj)
+        ////{
+        ////    Student student = obj as Student;
+        ////    if (student == null)
+        ////        return false;
+        ////    return
+        ////}
+
+        //public int CompareTo(Student that)
+        //{
+        //    if (this.LastName.CompareTo(that.LastName) == 0)
+        //        return this.FirstName.CompareTo(that.FirstName);
+        //    else
+        //        return this.LastName.CompareTo(that.LastName);
+        //}
     }
 }
